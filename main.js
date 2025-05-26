@@ -139,7 +139,7 @@ else
 
 	function updateWindowShape (easing = true)
 	{
-		// storing the actual offset in a proxy that we update against in the render function
+		
 		sceneOffsetTarget = {x: -window.screenX, y: -window.screenY};
 		if (!easing) sceneOffset = sceneOffsetTarget;
 	}
