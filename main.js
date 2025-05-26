@@ -21,7 +21,7 @@ let internalTime = getTime();
 let windowManager;
 let initialized = false;
 
-// get time in seconds since beginning of the day (so that all windows use the same time)
+
 function getTime ()
 {
 	return (new Date().getTime() - today) / 1000.0;
@@ -62,7 +62,7 @@ else
 			updateWindowShape(false);
 			render();
 			window.addEventListener('resize', resize);
-		}, 500)	
+		}, 400)	
 	}
 
 	function setupScene ()
@@ -125,7 +125,7 @@ else
 			let win = wins[i];
 
 			let c = new t.Color();
-			c.setHSL(i * .1, 1.0, .5);
+			c.setHSL(i * .1, 1.0, .45);
 
 			let s = 100 + i * 50;
 			let cube = new t.Mesh(new t.BoxGeometry(s, s, s), new t.MeshBasicMaterial({color: c , wireframe: true}));
@@ -139,7 +139,7 @@ else
 
 	function updateWindowShape (easing = true)
 	{
-		// storing the actual offset in a proxy that we update against in the render function
+		
 		sceneOffsetTarget = {x: -window.screenX, y: -window.screenY};
 		if (!easing) sceneOffset = sceneOffsetTarget;
 	}
